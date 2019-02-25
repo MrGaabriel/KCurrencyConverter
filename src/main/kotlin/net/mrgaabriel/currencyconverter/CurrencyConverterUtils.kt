@@ -294,6 +294,10 @@ object CurrencyConverterUtils {
         "YD" to 110
     )
 
+    fun getCurrencyCodes(): Map<String, Int> {
+        return CURRENCIES
+    }
+
     fun getCurrencyCode(code: String): Int? {
         return CURRENCIES[code]
     }
