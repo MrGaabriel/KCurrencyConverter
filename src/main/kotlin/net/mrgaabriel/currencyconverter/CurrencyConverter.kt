@@ -43,7 +43,7 @@ object CurrencyConverter {
         val payload = JsonParser().parse(body).obj
 
         val rates = payload["rates"].obj
-        val value = payload[toCurrency.currencyCode].double
+        val value = rates[toCurrency.currencyCode].double
 
         return value
     }
@@ -83,7 +83,7 @@ object CurrencyConverter {
         val payload = JsonParser().parse(body).obj
 
         val rates = payload["rates"].obj
-        val value = payload[toCurrency.currencyCode].double
+        val value = rates[toCurrency.currencyCode].double
 
         return value
     }
