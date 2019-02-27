@@ -21,7 +21,3 @@ object CurrencyConverterUtils {
         return rates.toMap().keys
     }
 }
-
-fun main() {
-    println("${CurrencyConverterUtils.getCurrencyCodes()}")
-}

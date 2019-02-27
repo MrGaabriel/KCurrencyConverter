@@ -30,7 +30,7 @@ object CurrencyConverter {
         if (toCurrency == null)
             throw CurrencyConvertException("\"${to.toUpperCase()}\" is not a valid currency code!")
 
-        val url = "https://api.exchangeratesapi.io/latest?base=$fromCurrency"
+        val url = "https://api.exchangeratesapi.io/latest?base=$fromCurrency&symbols=$toCurrency"
 
         val request = HttpRequest.get(url)
             .accept("application/json")
@@ -70,7 +70,7 @@ object CurrencyConverter {
         if (toCurrency == null)
             throw CurrencyConvertException("\"${to.toUpperCase()}\" is not a valid currency code!")
 
-        val url = "https://api.exchangeratesapi.io/latest?base=$fromCurrency"
+        val url = "https://api.exchangeratesapi.io/latest?base=$fromCurrency&symbols=$toCurrency"
 
         val request = HttpRequest.get(url)
             .accept("application/json")
