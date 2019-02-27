@@ -18,6 +18,6 @@ object CurrencyConverterUtils {
         val payload = JsonParser().parse(request.body()).obj
         val rates = payload["rates"].obj
 
-        return rates.toMap().keys
+        return (rates.toMap().keys as MutableSet).apply { add("EUR") }
     }
 }
