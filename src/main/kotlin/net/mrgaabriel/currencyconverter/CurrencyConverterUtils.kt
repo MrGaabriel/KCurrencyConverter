@@ -7,7 +7,7 @@ import com.google.gson.JsonParser
 
 object CurrencyConverterUtils {
 
-    fun getCurrencyCodes(): Set<String> {
+    fun getCurrencyCodes(): List<String> {
         val request = HttpRequest.get("https://api.exchangeratesapi.io/latest")
             .accept("application/json")
             .userAgent("Mozilla/5.0 (X11; Linux x86_64; rv:65.0) Gecko/20100101 Firefox/65.0")
@@ -18,6 +18,8 @@ object CurrencyConverterUtils {
         val payload = JsonParser().parse(request.body()).obj
         val rates = payload["rates"].obj
 
-        return (rates.toMap().keys as MutableSet).apply { add("EUR") }
+        return rates.toMap().keys.toMutableList().apply {
+            this.add("EUR")
+        }
     }
 }
