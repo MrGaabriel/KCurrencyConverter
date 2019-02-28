@@ -45,7 +45,7 @@ object CurrencyConverter {
         val rates = payload["rates"].obj
         val value = rates[toCurrency].double
 
-        return value
+        return value * quantity
     }
 
     /**
